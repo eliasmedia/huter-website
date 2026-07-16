@@ -1,0 +1,13 @@
+# macOS / Editor
+.DS_Store
+
+# Tooling / lokale Konfiguration
+.claude/
+
+# Interne Referenz & Arbeitsdateien – NICHT veröffentlichen
+do-not-ship/
+_original-archive/
+LIESMICH.txt
+bild-verzeichnis.html
+assets/logo/huter-logo-source.JPG
+*.zip
