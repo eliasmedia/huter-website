@@ -11,3 +11,10 @@ LIESMICH.txt
 bild-verzeichnis.html
 assets/logo/huter-logo-source.JPG
 *.zip
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
