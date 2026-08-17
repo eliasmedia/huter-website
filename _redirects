@@ -23,12 +23,3 @@
 
 # Alte Medienpfade der Django-Seite
 /media/*          /                301
-
-# Eigene Fehlerseite erzwingen. MUSS DIE LETZTE REGEL BLEIBEN.
-# Grund: Pages macht aus 404.html automatisch die saubere Route /404 und
-# verwendet die Datei dadurch nicht mehr als Fehlerdokument – echte 404er
-# kamen mit leerem Body zurück. Status 404 = Rewrite, kein Redirect:
-# die angefragte URL bleibt stehen, der Statuscode bleibt 404.
-# Regeln werden der Reihe nach geprüft und greifen nur, wenn kein
-# statisches Asset passt – vorhandene Seiten sind also nicht betroffen.
-/*                /404.html        404
