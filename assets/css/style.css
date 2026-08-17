@@ -410,5 +410,14 @@ fieldset.field legend { padding: 0; font-weight: 600; font-size: .9rem; margin-b
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .usp-grid { grid-template-columns: 1fr 1fr; }
   .gallery { columns: 1; }
-  .hero .wrap { padding-top: 7rem; }
+  /* Unten Platz für den Scroll-Hinweis reservieren: der belegt rund 91px
+     (65px hoch + 1.6rem Abstand zum Rand). Mit nur 5rem Innenabstand lief der
+     "Unsere Leistungen"-Button auf kurzen Displays 11px hinein. */
+  .hero .wrap { padding-top: 7rem; padding-bottom: 9rem; }
+}
+
+/* Auf flachen Viewports (Querformat, kleine Fenster) kostet der Hinweis mehr
+   Platz als er nützt – und dort ist Scrollen ohnehin offensichtlich. */
+@media (max-height: 560px) {
+  .hero .scroll-hint { display: none; }
 }
