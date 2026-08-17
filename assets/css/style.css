@@ -49,7 +49,11 @@ body {
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
-img { max-width: 100%; display: block; }
+/* height:auto ist Pflicht, weil alle <img> width/height-Attribute tragen (gegen
+   Layout-Sprünge). Ohne das gilt der Attributwert als Höhe und das Bild wird
+   verzerrt. Regeln, die bewusst beide Dimensionen setzen (.world-card img,
+   .feature .media img), sind spezifischer und stechen das hier aus. */
+img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.1; letter-spacing: -.01em; }
 
@@ -364,7 +368,9 @@ fieldset.field legend { padding: 0; font-weight: 600; font-size: .9rem; margin-b
 .site-footer a { color: #b7bdc6; }
 .site-footer a:hover { color: #fff; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: var(--gap); }
-.site-footer .flogo { height: 46px; margin-bottom: 1.1rem; }
+/* width:auto nötig, sonst zieht das width-Attribut (900) das Logo auf die volle
+   Spaltenbreite, während die Höhe bei 46px bleibt. */
+.site-footer .flogo { height: 46px; width: auto; margin-bottom: 1.1rem; }
 .site-footer h5 { color: #fff; font-family: var(--sans); font-weight: 700; font-size: .95rem; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 1rem; }
 .site-footer ul { list-style: none; padding: 0; display: grid; gap: .55rem; }
 .site-footer .muted { font-size: .95rem; line-height: 1.7; }
