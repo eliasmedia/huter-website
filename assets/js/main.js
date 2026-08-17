@@ -19,7 +19,10 @@
     nav.classList.remove("open");
     if (scrim) scrim.classList.remove("show");
     document.body.classList.remove("nav-open");
-    if (hamb) hamb.setAttribute("aria-expanded", "false");
+    if (hamb) {
+      hamb.setAttribute("aria-expanded", "false");
+      hamb.setAttribute("aria-label", "Menü öffnen");
+    }
   }
   if (hamb && nav) {
     hamb.addEventListener("click", function () {
@@ -27,6 +30,11 @@
       if (scrim) scrim.classList.toggle("show", open);
       document.body.classList.toggle("nav-open", open);
       hamb.setAttribute("aria-expanded", open ? "true" : "false");
+      hamb.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+    });
+    /* Escape schließt das Menü */
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && nav.classList.contains("open")) closeNav();
     });
     nav.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", closeNav); });
     if (scrim) scrim.addEventListener("click", closeNav);

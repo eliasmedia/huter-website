@@ -1,0 +1,25 @@
+# Weiterleitungen der alten Website-Struktur (Django-Seite bis 2026)
+# Format: /alt  /neu  Statuscode   – Cloudflare Pages
+# Hinweis: /foo.html -> /foo macht Cloudflare Pages automatisch (308).
+
+/haustechnik/     /haustechnik     301
+/sanitaer/        /bad-sanitaer    301
+/sanitaer         /bad-sanitaer    301
+/uber-uns/        /ueber-uns       301
+/uber-uns         /ueber-uns       301
+/kontakt/         /kontakt         301
+/anfrage/         /kontakt         301
+/anfrage          /kontakt         301
+/impressum/       /impressum       301
+/datenschutz/     /datenschutz     301
+
+# Seiten ohne direkte Entsprechung in der neuen Struktur
+/news/            /                301
+/news             /                301
+/presse/          /                301
+/presse           /                301
+/links/           /ueber-uns       301
+/links            /ueber-uns       301
+
+# Alte Medienpfade der Django-Seite
+/media/*          /                301

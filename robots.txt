@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Interne Seiten, die nicht in den Index sollen
+Disallow: /danke
+Disallow: /404.html
+
+Sitemap: https://www.huter.co.at/sitemap.xml

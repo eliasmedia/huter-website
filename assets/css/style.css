@@ -108,11 +108,22 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.1; 
 }
 .site-header .bar {
   display: flex; align-items: center; justify-content: space-between;
-  height: 78px;
+  gap: 1.75rem; height: 78px;
 }
 .brand img { height: 44px; width: auto; display: block; }
 
-.site-header.scrolled { background: rgba(255,255,255,.94); backdrop-filter: saturate(1.4) blur(10px); box-shadow: 0 1px 0 var(--line); }
+/* Hintergrund + Blur liegen auf einem Pseudo-Element, NICHT auf .site-header selbst:
+   backdrop-filter würde sonst einen containing block für das fixed positionierte
+   .nav-Panel erzeugen – das Mobilmenü wäre dann nur so hoch wie der Header. */
+.site-header::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: rgba(255,255,255,.94);
+  backdrop-filter: saturate(1.4) blur(10px);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  box-shadow: 0 1px 0 var(--line);
+  opacity: 0; transition: opacity .25s ease;
+}
+.site-header.scrolled::before { opacity: 1; }
 .site-header.scrolled .brand img { height: 38px; transition: height .25s ease; }
 .site-header.scrolled .nav a { color: var(--ink); }
 .site-header.scrolled .hamb span { background: var(--ink); }
@@ -128,6 +139,14 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.1; 
 .hamb { display: none; flex-direction: column; gap: 5px; background: none; border: 0; padding: 8px; cursor: pointer; }
 .hamb span { width: 26px; height: 2px; background: #fff; display: block; transition: transform .25s ease, opacity .2s ease; }
 
+/* Enger Bereich zwischen Mobil-Breakpoint und komfortabler Desktop-Breite:
+   Navigation zusammenrücken, damit sie nicht ins Logo läuft. */
+@media (min-width: 901px) and (max-width: 1100px) {
+  .nav { gap: 1rem; }
+  .nav a { font-size: .88rem; }
+  .nav .btn { padding: .55rem 1rem; }
+}
+
 /* Mobile nav */
 @media (max-width: 900px) {
   .hamb { display: flex; }
@@ -142,6 +161,14 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.1; 
   .site-header.scrolled .nav a { color: #fff; }
   .nav .btn { margin-top: .5rem; }
   body.nav-open { overflow: hidden; }
+
+  /* Burger muss über dem geöffneten Panel bleiben, sonst gibt es keinen
+     sichtbaren Weg zurück – und wird dort zum Schließen-X. */
+  .hamb { position: relative; z-index: 2; }
+  body.nav-open .site-header .hamb span { background: #fff; }
+  body.nav-open .hamb span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  body.nav-open .hamb span:nth-child(2) { opacity: 0; }
+  body.nav-open .hamb span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   .nav-scrim { position: fixed; inset: 0; background: rgba(0,0,0,.5); opacity: 0; pointer-events: none; transition: opacity .3s ease; z-index: 99; }
   .nav-scrim.show { opacity: 1; pointer-events: auto; }
 }
@@ -312,6 +339,11 @@ body.home .site-header:not(.scrolled) .brand { visibility: hidden; }
 .check { display: flex; gap: .6rem; align-items: center; font-size: .96rem; color: var(--ink-700); }
 .check input { width: auto; }
 .form .hint { font-size: .82rem; color: var(--muted); margin-top: 1.1rem; }
+/* fieldset für die Checkbox-Gruppe: optisch identisch zu einem .field mit label */
+fieldset.field { border: 0; padding: 0; margin-inline: 0; }
+fieldset.field legend { padding: 0; font-weight: 600; font-size: .9rem; margin-bottom: .4rem; }
+/* Honeypot – für Menschen und Screenreader unsichtbar, für Bots ausfüllbar */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
 /* ---------- Map ---------- */
 .map-embed { border: 0; width: 100%; height: 100%; min-height: 320px; border-radius: var(--radius); }

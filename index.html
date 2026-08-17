@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-AT">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,11 +12,127 @@
   <meta property="og:title" content="Huter Haustechnik – Raumklima, Passivhaus & Wohlfühlbäder in Tirol">
   <meta property="og:description" content="Huter Haustechnik aus Matrei am Brenner: energieeffiziente Haustechnik fürs Passivhaus, Wohnraumlüftung, Heizen & Kühlen sowie Wohlfühlbäder – alles aus einer Hand. Seit 2001 in Familienhand.">
   <meta property="og:url" content="https://www.huter.co.at/">
-  <meta property="og:image" content="https://www.huter.co.at/assets/img/ueber-uns.jpg">
+  <meta property="og:image" content="https://www.huter.co.at/assets/img/og-huter.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Firmengebäude der Huter Haustechnik GmbH in Matrei am Brenner">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="stylesheet" href="assets/fonts/fonts.css?v=3">
-  <link rel="stylesheet" href="assets/css/style.css?v=3">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#15171c">
+  <link rel="stylesheet" href="assets/fonts/fonts.css?v=6">
+  <link rel="stylesheet" href="assets/css/style.css?v=6">
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+  <!-- Strukturierte Daten. TODO: openingHoursSpecification ergänzen,
+       sobald die Öffnungszeiten feststehen (siehe README). -->
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": [
+      "Plumber",
+      "HVACBusiness"
+    ],
+    "@id": "https://www.huter.co.at/#organisation",
+    "name": "Huter Haustechnik GmbH",
+    "url": "https://www.huter.co.at/",
+    "logo": "https://www.huter.co.at/icon-512.png",
+    "image": "https://www.huter.co.at/assets/img/og-huter.jpg",
+    "description": "Familienbetrieb für energieeffiziente Haustechnik und Wohlfühlbäder in Tirol: Passivhaus, Wohnraumlüftung, Heizen & Kühlen, Solar, Photovoltaik und Badsanierung.",
+    "telephone": "+43527364000",
+    "faxNumber": "+435273640090",
+    "email": "office@huter.co.at",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mühlbach/Statz 42",
+      "postalCode": "6143",
+      "addressLocality": "Matrei am Brenner",
+      "addressRegion": "Tirol",
+      "addressCountry": "AT"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 47.1201305,
+      "longitude": 11.4528764
+    },
+    "hasMap": "https://www.openstreetmap.org/?mlat=47.1201305&mlon=11.4528764#map=17/47.1201305/11.4528764",
+    "foundingDate": "2001",
+    "founder": {
+      "@type": "Person",
+      "name": "Albert Lechner"
+    },
+    "vatID": "ATU43075408",
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Tirol"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Innsbruck-Land"
+      }
+    ],
+    "knowsLanguage": "de-AT",
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Passivhaus & Niedrigenergie"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Wohnraumlüftung"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Heizen & Kühlen"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Solartechnik & Photovoltaik"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Badsanierung"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Barrierefreie Bäder"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "3D-Badplanung"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Haustechnikplanung"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="home">
 
@@ -24,7 +140,7 @@
   <header class="site-header">
     <div class="wrap bar">
       <a class="brand" href="/" aria-label="Huter Haustechnik – Startseite">
-        <img src="assets/logo/huter-logo.png" alt="Huter Haustechnik – Alles aus einer Hand">
+        <img decoding="async" width="900" height="256" src="assets/logo/huter-logo.webp" alt="Huter Haustechnik – Alles aus einer Hand">
       </a>
       <button class="hamb" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="nav" aria-label="Hauptnavigation">
@@ -42,10 +158,10 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="hero-fallback" style="background-image:url('assets/img/haustechnik-01.jpg')"></div>
+    <div class="hero-fallback" style="background-image:url('assets/img/haustechnik-01.webp')"></div>
     <canvas id="hero-canvas"></canvas>
     <div class="wrap">
-      <img class="hero-logo" src="assets/logo/huter-logo.png" alt="Huter Haustechnik – Alles aus einer Hand" width="900" height="256">
+      <img decoding="async" class="hero-logo" src="assets/logo/huter-logo.webp" alt="Huter Haustechnik – Alles aus einer Hand" width="900" height="256">
       <span class="eyebrow">Haustechnik &amp; Bad aus Tirol</span>
       <h1>Raumklima, das man <span class="accent">spürt</span>.</h1>
       <p>Von der energieeffizienten Haustechnik fürs Passivhaus bis zum Wohlfühlbad – seit 2001 Ihr Familienbetrieb für gesundes Heizen, Kühlen und Wohnen im Herzen Tirols.</p>
@@ -79,7 +195,7 @@
       </div>
       <div class="grid-2">
         <a class="world-card reveal" href="/haustechnik">
-          <img src="assets/img/haustechnik-01.jpg" alt="Moderne Haustechnik im Technikraum">
+          <img loading="lazy" decoding="async" width="1400" height="933" src="assets/img/haustechnik-01.webp" alt="Moderne Haustechnik im Technikraum">
           <div class="body">
             <span class="tag red">Haustechnik</span>
             <h3>Energieeffiziente Haustechnik</h3>
@@ -88,7 +204,7 @@
           </div>
         </a>
         <a class="world-card reveal" data-d="1" href="/bad-sanitaer">
-          <img src="assets/img/badsanierung.jpg" alt="Modernes Bad mit dunklen Fliesen">
+          <img loading="lazy" decoding="async" width="1400" height="711" src="assets/img/badsanierung.webp" alt="Modernes Bad mit dunklen Fliesen">
           <div class="body">
             <span class="tag blue">Bad &amp; Sanitär</span>
             <h3>Bäder zum Wohlfühlen</h3>
@@ -146,7 +262,7 @@
   <section class="section">
     <div class="wrap">
       <div class="feature">
-        <div class="media reveal"><img src="assets/img/haus-06-2.jpg" alt="Modernes Wohnhaus in Tirol"></div>
+        <div class="media reveal"><img loading="lazy" decoding="async" width="934" height="1400" src="assets/img/haus-06-2.webp" alt="Modernes Wohnhaus in Tirol"></div>
         <div class="reveal" data-d="1">
           <span class="eyebrow">Familienbetrieb aus Matrei</span>
           <h2>Regional, nachhaltig und mit Handschlagqualität</h2>
@@ -165,10 +281,10 @@
         <h2 class="h-lead">Arbeiten, die für sich sprechen</h2>
       </div>
       <div class="grid-4">
-        <div class="world-card reveal" style="min-height:300px"><img src="assets/img/haus-05.jpg" alt="Referenzprojekt Wohnhaus"></div>
-        <div class="world-card reveal" data-d="1" style="min-height:300px"><img src="assets/img/projek-04-01.jpg" alt="Referenzprojekt Bad"></div>
-        <div class="world-card reveal" data-d="2" style="min-height:300px"><img src="assets/img/haus-07.jpg" alt="Referenzprojekt Wohnhaus"></div>
-        <div class="world-card reveal" data-d="3" style="min-height:300px"><img src="assets/img/projek-03-01.jpg" alt="Referenzprojekt Bad"></div>
+        <div class="world-card reveal" style="min-height:300px"><img loading="lazy" decoding="async" width="1400" height="933" src="assets/img/haus-05.webp" alt="Referenzprojekt Wohnhaus"></div>
+        <div class="world-card reveal" data-d="1" style="min-height:300px"><img loading="lazy" decoding="async" width="1043" height="1400" src="assets/img/projek-04-01.webp" alt="Referenzprojekt Bad"></div>
+        <div class="world-card reveal" data-d="2" style="min-height:300px"><img loading="lazy" decoding="async" width="1400" height="934" src="assets/img/haus-07.webp" alt="Referenzprojekt Wohnhaus"></div>
+        <div class="world-card reveal" data-d="3" style="min-height:300px"><img loading="lazy" decoding="async" width="1400" height="917" src="assets/img/projek-03-01.webp" alt="Referenzprojekt Bad"></div>
       </div>
       <div class="center" style="margin-top:2.5rem"><a href="/referenzen" class="btn btn-ghost">Alle Referenzen ansehen <span class="arw">→</span></a></div>
     </div>
@@ -193,7 +309,7 @@
     <div class="wrap">
       <div class="footer-grid">
         <div>
-          <img class="flogo" src="assets/logo/huter-logo.png" alt="Huter Haustechnik">
+          <img loading="lazy" decoding="async" width="900" height="256" class="flogo" src="assets/logo/huter-logo.webp" alt="Huter Haustechnik">
           <p class="muted">Alles aus einer Hand – energieeffiziente Haustechnik und Wohlfühlbäder aus Matrei am Brenner. Seit 2001 in Familienhand.</p>
         </div>
         <div>
@@ -235,7 +351,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=3" defer></script>
-  <script src="assets/js/hero.js?v=3" type="module"></script>
+  <script src="assets/js/main.js?v=6" defer></script>
+  <script src="assets/js/hero.js?v=6" defer></script>
 </body>
 </html>
