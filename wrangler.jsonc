@@ -1,0 +1,25 @@
+{
+  // Konfiguration des Cloudflare Workers, der diese statische Seite ausliefert.
+  //
+  // Grund für diese Datei: not_found_handling lässt sich NUR hier setzen, es gibt
+  // dafür keine Dashboard-Option. Ohne die Einstellung liefert der Worker bei
+  // unbekannten Pfaden eine leere 404 ohne Content-Type – zusammen mit dem
+  // nosniff-Header führte das in Safari zu einem Download-Dialog statt zu einer
+  // Fehlerseite.
+  //
+  // "name" muss dem bestehenden Worker entsprechen, sonst wird woanders deployt.
+  "name": "huter-website",
+  "compatibility_date": "2026-08-17",
+  "assets": {
+    // Die Seite hat keinen Build-Step, ausgeliefert wird das Repo-Wurzelverzeichnis
+    // (entspricht "Build output directory: /" in den bisherigen Einstellungen).
+    "directory": ".",
+
+    // Unbekannte Pfade -> 404.html mit Status 404 (statt leerer Antwort).
+    "not_found_handling": "404-page",
+
+    // Bisheriges Verhalten explizit festschreiben: /haustechnik liefert
+    // haustechnik.html, /haustechnik.html leitet auf /haustechnik um.
+    "html_handling": "auto-trailing-slash"
+  }
+}
