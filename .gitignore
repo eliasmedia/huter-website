@@ -11,3 +11,9 @@ LIESMICH.txt
 bild-verzeichnis.html
 assets/logo/huter-logo-source.JPG
 *.zip
+
+# Instagram-Content – lokal, nicht veröffentlichen
+social-media/
+
+# Quelldateien der Fotos – nur die konvertierten .webp gehoeren ins Repo
+assets/img/Bilder Neu/
